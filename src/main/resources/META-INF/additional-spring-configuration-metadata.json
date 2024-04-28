@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "allowed-age",
+      "type": "java.lang.Integer",
+      "description": "Age of users allowed for registration."
+  }
+] }
