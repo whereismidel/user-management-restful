@@ -8,19 +8,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d156215a-b5d1-4b11-b83c-4b919f0d1532" name="Changes" comment="Added JpaSpecificationExecutor extension to the user repository.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/handler/AlreadyExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/handler/InvalidArgumentException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/handler/NotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/midel/service/UserServiceImplTest.java" afterDir="false" />
+    <list default="true" id="d156215a-b5d1-4b11-b83c-4b919f0d1532" name="Changes" comment="- Refactored code for better readability and maintainability&#10;- Added unit tests for UserController and UserService&#10;- Ensured code coverage and improved code quality">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/exception/ResponseException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/midel/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/midel/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/midel/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/midel/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/midel/response/PaginationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/midel/response/PaginationResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/midel/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/midel/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/midel/exception/AlreadyExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/midel/exception/AlreadyExistException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/midel/exception/InvalidArgumentException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/midel/exception/InvalidArgumentException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/midel/exception/NotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/midel/exception/NotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/midel/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/midel/service/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/midel/service/UserServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/midel/service/UserServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +29,8 @@
       <list>
         <option value="com.intellij.jpb.JpaEntity" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -60,7 +57,7 @@
   &quot;isMigrated&quot;: true
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -91,10 +88,11 @@
     "JUnit.UserControllerTest.updateUser_invalidParameters.executor": "Run",
     "JUnit.UserControllerTest.updateUser_notFound.executor": "Run",
     "JUnit.UserControllerTest.updateUser_validParameters.executor": "Run",
+    "JUnit.UserServiceImplTest.createUser_invalidBirthdate.executor": "Run",
     "JUnit.UserServiceImplTest.createUser_validParameters.executor": "Run",
     "JUnit.UserServiceImplTest.createUser_validUser.executor": "Coverage",
     "JUnit.UserServiceImplTest.deleteUser.executor": "Coverage",
-    "JUnit.UserServiceImplTest.executor": "Debug",
+    "JUnit.UserServiceImplTest.executor": "Run",
     "JUnit.UserServiceImplTest.getUserById_userFound.executor": "Coverage",
     "JUnit.UserServiceImplTest.getUserById_userNotFound.executor": "Coverage",
     "JUnit.UserServiceImplTest.getUsersWithPagination_invalidBirthdateFilter.executor": "Coverage",
@@ -112,6 +110,7 @@
     "JUnit.UserServiceImplTest.saveUser_requiredFieldIsBlank.executor": "Coverage",
     "JUnit.UserServiceImplTest.updateUser_userNotFound.executor": "Coverage",
     "JUnit.UserServiceImplTest.updateUser_validUser.executor": "Coverage",
+    "JUnit.midel in user-management-restful.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -156,7 +155,7 @@
       <recent name="com.midel.handler" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserControllerTest">
+  <component name="RunManager" selected="Spring Boot.Main">
     <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="user-management-restful" />
       <extension name="coverage">
@@ -187,7 +186,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceImplTest.getUsersWithPagination_invalidBirthdateFilter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceImplTest.createUser_invalidBirthdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="user-management-restful" />
       <extension name="coverage">
         <pattern>
@@ -197,13 +196,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.midel.service" />
       <option name="MAIN_CLASS_NAME" value="com.midel.service.UserServiceImplTest" />
-      <option name="METHOD_NAME" value="getUsersWithPagination_invalidBirthdateFilter" />
+      <option name="METHOD_NAME" value="createUser_invalidBirthdate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceImplTest.getUsersWithPagination_invalidDateRange_throwsException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceImplTest.saveUser_invalidBirthdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="user-management-restful" />
       <extension name="coverage">
         <pattern>
@@ -213,24 +212,16 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.midel.service" />
       <option name="MAIN_CLASS_NAME" value="com.midel.service.UserServiceImplTest" />
-      <option name="METHOD_NAME" value="getUsersWithPagination_invalidDateRange_throwsException" />
+      <option name="METHOD_NAME" value="saveUser_invalidBirthdate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceImplTest.getUsersWithPagination_validDateRange_returnsResponseEntityWithCorrectLinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="midel in user-management-restful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="user-management-restful" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.midel.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.midel.service" />
-      <option name="MAIN_CLASS_NAME" value="com.midel.service.UserServiceImplTest" />
-      <option name="METHOD_NAME" value="getUsersWithPagination_validDateRange_returnsResponseEntityWithCorrectLinks" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java/com/midel" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -244,11 +235,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserControllerTest" />
+        <item itemvalue="JUnit.midel in user-management-restful" />
+        <item itemvalue="JUnit.UserServiceImplTest.createUser_invalidBirthdate" />
         <item itemvalue="JUnit.UserServiceImplTest" />
-        <item itemvalue="JUnit.UserServiceImplTest.getUsersWithPagination_validDateRange_returnsResponseEntityWithCorrectLinks" />
-        <item itemvalue="JUnit.UserServiceImplTest.getUsersWithPagination_invalidDateRange_throwsException" />
-        <item itemvalue="JUnit.UserServiceImplTest.getUsersWithPagination_invalidBirthdateFilter" />
+        <item itemvalue="JUnit.UserServiceImplTest.saveUser_invalidBirthdate" />
+        <item itemvalue="JUnit.UserControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -268,7 +259,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1714217877863</updated>
-      <workItem from="1714217879590" duration="65339000" />
+      <workItem from="1714217879590" duration="68283000" />
     </task>
     <task id="LOCAL-00001" summary="Add user management RESTful API&#10;&#10;- Added User entity with fields: id, email, firstname, lastname, birthdate, address, phoneNumber&#10;- Implemented UserController with CRUD operations for user management&#10;- Created UserRepository interface for database operations&#10;- Implemented GlobalExceptionHandler for handling exceptions&#10;- Added CustomResponse classes for handling response formats&#10;- Implemented UserService interface and UserServiceImpl with methods for user operations&#10;- Added UserUtils for email and birthdate validation&#10;- Configured database and server properties">
       <option name="closed" value="true" />
@@ -286,7 +277,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714338062855</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="- Refactored code for better readability and maintainability&#10;- Added unit tests for UserController and UserService&#10;- Ensured code coverage and improved code quality">
+      <option name="closed" value="true" />
+      <created>1714428942341</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714428942341</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,19 +305,25 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add user management RESTful API&#10;&#10;- Added User entity with fields: id, email, firstname, lastname, birthdate, address, phoneNumber&#10;- Implemented UserController with CRUD operations for user management&#10;- Created UserRepository interface for database operations&#10;- Implemented GlobalExceptionHandler for handling exceptions&#10;- Added CustomResponse classes for handling response formats&#10;- Implemented UserService interface and UserServiceImpl with methods for user operations&#10;- Added UserUtils for email and birthdate validation&#10;- Configured database and server properties" />
     <MESSAGE value="Added JpaSpecificationExecutor extension to the user repository." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added JpaSpecificationExecutor extension to the user repository." />
+    <MESSAGE value="- Refactored code for better readability and maintainability&#10;- Added unit tests for UserController and UserService&#10;- Ensured code coverage and improved code quality" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Refactored code for better readability and maintainability&#10;- Added unit tests for UserController and UserService&#10;- Ensured code coverage and improved code quality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/midel/service/UserServiceImpl.java</url>
+          <line>197</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/midel/utils/UserUtils.java</url>
-          <line>21</line>
-          <properties class="com.midel.utils.UserUtils" method="isBirthDateValid">
+          <url>file://$PROJECT_DIR$/src/test/java/com/midel/service/UserServiceImplTest.java</url>
+          <line>122</line>
+          <properties class="com.midel.service.UserServiceImplTest" method="createUser_invalidBirthdate">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="12" />
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -360,14 +365,14 @@
     <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest_partiallyUser_userNotFound.ic" NAME="UserServiceImplTest.partiallyUser_userNotFound Coverage Results" MODIFIED="1714425727336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.midel.service.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/user_management_restful$UserControllerTest.ic" NAME="UserControllerTest Coverage Results" MODIFIED="1714351825899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>com.midel.controller.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest_getUserById_userFound.ic" NAME="UserServiceImplTest.getUserById_userFound Coverage Results" MODIFIED="1714424110374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.midel.service.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest_deleteUser.ic" NAME="UserServiceImplTest.deleteUser Coverage Results" MODIFIED="1714424550575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.midel.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserControllerTest.ic" NAME="UserControllerTest Coverage Results" MODIFIED="1714428639187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.controller.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/user_management_restful$UserControllerTest_createUser_withExistEmail.ic" NAME="UserControllerTest.createUser_withExistEmail Coverage Results" MODIFIED="1714349182479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.midel.controller.*</FILTER>
@@ -381,7 +386,7 @@
     <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest_getUsersWithPagination_withDefaultParameters_withoutFilters_valid.ic" NAME="UserServiceImplTest.getUsersWithPagination_withDefaultParameters_withoutFilters_valid Coverage Results" MODIFIED="1714427433556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.midel.service.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest.ic" NAME="UserServiceImplTest Coverage Results" MODIFIED="1714428143473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest.ic" NAME="UserServiceImplTest Coverage Results" MODIFIED="1714428614121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.midel.service.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest_saveUser_emailAlreadyExist.ic" NAME="UserServiceImplTest.saveUser_emailAlreadyExist Coverage Results" MODIFIED="1714423823552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">

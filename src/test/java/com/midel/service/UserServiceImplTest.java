@@ -79,7 +79,7 @@ class UserServiceImplTest {
     }
 
     @Test
-    void saveUser_emailAlreadyExist() {
+    void createUser_emailAlreadyExist() {
         // Arrange
         User userToCreate = new User(
                 null, "test@example.com", "Name", "Lastname",
@@ -102,7 +102,7 @@ class UserServiceImplTest {
     }
 
     @Test
-    void saveUser_invalidEmail() {
+    void createUser_invalidEmail() {
         // Arrange
         User userToCreate = new User(
                 null, "test@@@example.com", "Name", "Lastname",
@@ -116,11 +116,11 @@ class UserServiceImplTest {
         );
 
         // Assert
-        assertEquals("Invalid email.", exception.getMessage());
+        assertThat(exception.getMessages()).contains("Invalid email.");
     }
 
     @Test
-    void saveUser_invalidBirthdate() {
+    void createUser_invalidBirthdate() {
         // Arrange
         User userToCreate = new User(
                 null, "test@example.com", "Name", "Lastname",
@@ -134,7 +134,7 @@ class UserServiceImplTest {
         );
 
         // Assert
-        assertEquals("Invalid birthdate. Value must be earlier than current date and the user must be at least " + allowedAge + " years old.", exception.getMessage());
+        assertThat(exception.getMessages()).contains("Invalid birthdate. Value must be earlier than current date and the user must be at least " + allowedAge + " years old.");
     }
 
     @Test

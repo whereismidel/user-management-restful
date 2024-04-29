@@ -4,6 +4,7 @@ import com.midel.entity.User;
 import com.midel.exception.AlreadyExistException;
 import com.midel.exception.InvalidArgumentException;
 import com.midel.exception.NotFoundException;
+import com.midel.exception.ResponseException;
 import com.midel.response.ErrorResponse;
 import com.midel.response.UserResponse;
 import com.midel.service.UserService;
@@ -39,7 +40,7 @@ public class UserController {
         try {
             return userService.getUsersWithPagination(page, size, from, to);
         } catch (InvalidArgumentException e) {
-            return new ErrorResponse(HttpStatus.BAD_REQUEST, e.getMessage()).getResponseEntity();
+            return new ErrorResponse(HttpStatus.BAD_REQUEST, e.getMessages()).getResponseEntity();
         }
     }
 
@@ -50,7 +51,7 @@ public class UserController {
         try {
             user = userService.getUserById(id);
         } catch (NotFoundException e) {
-            return new ErrorResponse(HttpStatus.NOT_FOUND, e.getMessage()).getResponseEntity();
+            return new ErrorResponse(HttpStatus.NOT_FOUND, e.getMessages()).getResponseEntity();
         }
 
         return new UserResponse(
@@ -67,7 +68,7 @@ public class UserController {
         try {
             createdUser = userService.createUser(user);
         } catch (InvalidArgumentException | AlreadyExistException e) {
-            return new ErrorResponse(HttpStatus.BAD_REQUEST, e.getMessage()).getResponseEntity();
+            return new ErrorResponse(HttpStatus.BAD_REQUEST, e.getMessages()).getResponseEntity();
         }
 
         return new UserResponse(
@@ -91,9 +92,9 @@ public class UserController {
         try {
             user = userService.updateUser(id, user);
         } catch (NotFoundException nfe) {
-            return new ErrorResponse(HttpStatus.NOT_FOUND, nfe.getMessage()).getResponseEntity();
+            return new ErrorResponse(HttpStatus.NOT_FOUND, nfe.getMessages()).getResponseEntity();
         } catch (InvalidArgumentException iae) {
-            return new ErrorResponse(HttpStatus.BAD_REQUEST, iae.getMessage()).getResponseEntity();
+            return new ErrorResponse(HttpStatus.BAD_REQUEST, iae.getMessages()).getResponseEntity();
         }
 
         return new UserResponse(
@@ -109,9 +110,9 @@ public class UserController {
         try {
             user = userService.partiallyUpdateUser(id, user);
         } catch (NotFoundException nfe) {
-            return new ErrorResponse(HttpStatus.NOT_FOUND, nfe.getMessage()).getResponseEntity();
+            return new ErrorResponse(HttpStatus.NOT_FOUND, nfe.getMessages()).getResponseEntity();
         } catch (InvalidArgumentException iae) {
-            return new ErrorResponse(HttpStatus.BAD_REQUEST, iae.getMessage()).getResponseEntity();
+            return new ErrorResponse(HttpStatus.BAD_REQUEST, iae.getMessages()).getResponseEntity();
         }
 
         return new UserResponse(

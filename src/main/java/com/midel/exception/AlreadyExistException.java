@@ -2,7 +2,7 @@ package com.midel.exception;
 
 import java.util.List;
 
-public class AlreadyExistException extends RuntimeException {
+public class AlreadyExistException extends ResponseException {
 
     public AlreadyExistException(String message) {
         super(message);
@@ -13,6 +13,6 @@ public class AlreadyExistException extends RuntimeException {
     }
 
     public AlreadyExistException(List<String> messages) {
-        super(String.join("\n", messages));
+        super(messages);
     }
 }

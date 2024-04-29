@@ -2,7 +2,7 @@ package com.midel.exception;
 
 import java.util.List;
 
-public class NotFoundException extends RuntimeException {
+public class NotFoundException extends ResponseException {
 
     public NotFoundException(String message) {
         super(message);
@@ -13,6 +13,7 @@ public class NotFoundException extends RuntimeException {
     }
 
     public NotFoundException(List<String> messages) {
-        super(String.join("\n", messages));
+        super(messages);
     }
+
 }

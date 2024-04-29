@@ -71,8 +71,8 @@ public class UserServiceImpl implements UserService {
             List<Predicate> predicates = new ArrayList<>();
 
             if (from != null && to != null) {
-                predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("birthDate"), from));
-                predicates.add(criteriaBuilder.lessThan(root.get("birthDate"), to));
+                predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("birthdate"), from));
+                predicates.add(criteriaBuilder.lessThan(root.get("birthdate"), to));
 
                 uriBuilder.replaceQueryParam("from", from);
                 uriBuilder.replaceQueryParam("to", to);
@@ -158,20 +158,18 @@ public class UserServiceImpl implements UserService {
     }
 
     private User save(User user) {
+
+        List<String> messages = validateUser(user);
+
+        if (!messages.isEmpty()) {
+            throw new InvalidArgumentException(messages);
+        }
+
         try {
-
-            List<String> messages = validateUser(user);
-
-            if (!messages.isEmpty()) {
-                throw new InvalidArgumentException(messages);
-            }
-
             return userRepository.save(user);
 
         } catch (DataIntegrityViolationException e) {
             throw new AlreadyExistException("A user with this email already exists.");
-        } catch (Exception e) {
-            throw new InvalidArgumentException(e.getMessage());
         }
     }
 
