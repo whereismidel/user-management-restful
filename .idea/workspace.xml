@@ -1,34 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SPLITTER_PROPORTION" value="0.29490617" />
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d156215a-b5d1-4b11-b83c-4b919f0d1532" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/response/CustomResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/response/ErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/response/PaginationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/response/UserResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/service/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/utils/UserUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/additional-spring-configuration-metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
+    <list default="true" id="d156215a-b5d1-4b11-b83c-4b919f0d1532" name="Changes" comment="Added JpaSpecificationExecutor extension to the user repository.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/handler/AlreadyExistException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/handler/InvalidArgumentException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/handler/NotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/midel/service/UserServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/midel/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/midel/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/midel/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/midel/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/midel/response/PaginationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/midel/response/PaginationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/midel/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/midel/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/midel/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/midel/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,19 +40,31 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;whereismidel&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/whereismidel/user-management-restful.git&quot;,
+    &quot;accountId&quot;: &quot;fc85ceaa-777b-4a87-91e8-a0ff97859245&quot;
+  }
+}</component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2fgLfHs0yNCtoC0NSkEFd6qCAAC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -69,6 +73,45 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.UserControllerTest (1).executor": "Run",
+    "JUnit.UserControllerTest.createUser_validParameters.executor": "Run",
+    "JUnit.UserControllerTest.createUser_withExistEmail.executor": "Coverage",
+    "JUnit.UserControllerTest.deleteUser.executor": "Coverage",
+    "JUnit.UserControllerTest.executor": "Coverage",
+    "JUnit.UserControllerTest.getAllUsers_withInvalidBirthdateFilterParameters.executor": "Run",
+    "JUnit.UserControllerTest.getAllUsers_withInvalidPaginationParameters.executor": "Coverage",
+    "JUnit.UserControllerTest.getAllUsers_withValidBirthdateFilterParameters.executor": "Run",
+    "JUnit.UserControllerTest.getAllUsers_withValidPaginationParameters.executor": "Run",
+    "JUnit.UserControllerTest.getAllUsers_withoutParameters.executor": "Coverage",
+    "JUnit.UserControllerTest.getUserById_userFound.executor": "Run",
+    "JUnit.UserControllerTest.getUserById_userNotFound.executor": "Run",
+    "JUnit.UserControllerTest.partiallyUpdateUser_invalidParameters.executor": "Run",
+    "JUnit.UserControllerTest.partiallyUpdateUser_notFound.executor": "Run",
+    "JUnit.UserControllerTest.partiallyUpdateUser_validParameters.executor": "Run",
+    "JUnit.UserControllerTest.updateUser_invalidParameters.executor": "Run",
+    "JUnit.UserControllerTest.updateUser_notFound.executor": "Run",
+    "JUnit.UserControllerTest.updateUser_validParameters.executor": "Run",
+    "JUnit.UserServiceImplTest.createUser_validParameters.executor": "Run",
+    "JUnit.UserServiceImplTest.createUser_validUser.executor": "Coverage",
+    "JUnit.UserServiceImplTest.deleteUser.executor": "Coverage",
+    "JUnit.UserServiceImplTest.executor": "Debug",
+    "JUnit.UserServiceImplTest.getUserById_userFound.executor": "Coverage",
+    "JUnit.UserServiceImplTest.getUserById_userNotFound.executor": "Coverage",
+    "JUnit.UserServiceImplTest.getUsersWithPagination_invalidBirthdateFilter.executor": "Coverage",
+    "JUnit.UserServiceImplTest.getUsersWithPagination_invalidDateRange_throwsException.executor": "Run",
+    "JUnit.UserServiceImplTest.getUsersWithPagination_validDateRange_returnsResponseEntityWithCorrectLinks.executor": "Run",
+    "JUnit.UserServiceImplTest.getUsersWithPagination_withDefaultParameters_withoutFilters_valid.executor": "Coverage",
+    "JUnit.UserServiceImplTest.partiallyUpdateUser_validUser.executor": "Coverage",
+    "JUnit.UserServiceImplTest.partiallyUpdateUser_validUserWithoutUpdateFields.executor": "Coverage",
+    "JUnit.UserServiceImplTest.partiallyUser_userNotFound.executor": "Coverage",
+    "JUnit.UserServiceImplTest.saveUser_emailAlreadyExist.executor": "Coverage",
+    "JUnit.UserServiceImplTest.saveUser_invalidBirthdate.executor": "Run",
+    "JUnit.UserServiceImplTest.saveUser_invalidEmail.executor": "Coverage",
+    "JUnit.UserServiceImplTest.saveUser_invalidUser.executor": "Run",
+    "JUnit.UserServiceImplTest.saveUser_missingRequiredField.executor": "Coverage",
+    "JUnit.UserServiceImplTest.saveUser_requiredFieldIsBlank.executor": "Coverage",
+    "JUnit.UserServiceImplTest.updateUser_userNotFound.executor": "Coverage",
+    "JUnit.UserServiceImplTest.updateUser_validUser.executor": "Coverage",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -88,7 +131,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "com.intellij.entityDeclaration",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -107,28 +150,105 @@
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.midel.service" />
+      <recent name="com.midel.controller" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.midel.handler" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UserControllerTest">
+    <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="user-management-restful" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.midel.Main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.midel.*" />
+          <option name="PATTERN" value="com.midel.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.midel.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.midel.controller.UserControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="user-management-restful" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.midel.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.midel.service" />
+      <option name="MAIN_CLASS_NAME" value="com.midel.service.UserServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImplTest.getUsersWithPagination_invalidBirthdateFilter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="user-management-restful" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.midel.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.midel.service" />
+      <option name="MAIN_CLASS_NAME" value="com.midel.service.UserServiceImplTest" />
+      <option name="METHOD_NAME" value="getUsersWithPagination_invalidBirthdateFilter" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImplTest.getUsersWithPagination_invalidDateRange_throwsException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="user-management-restful" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.midel.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.midel.service" />
+      <option name="MAIN_CLASS_NAME" value="com.midel.service.UserServiceImplTest" />
+      <option name="METHOD_NAME" value="getUsersWithPagination_invalidDateRange_throwsException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImplTest.getUsersWithPagination_validDateRange_returnsResponseEntityWithCorrectLinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="user-management-restful" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.midel.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.midel.service" />
+      <option name="MAIN_CLASS_NAME" value="com.midel.service.UserServiceImplTest" />
+      <option name="METHOD_NAME" value="getUsersWithPagination_validDateRange_returnsResponseEntityWithCorrectLinks" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="user-management-restful" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.midel.Main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.Main" />
+        <item itemvalue="JUnit.UserControllerTest" />
+        <item itemvalue="JUnit.UserServiceImplTest" />
+        <item itemvalue="JUnit.UserServiceImplTest.getUsersWithPagination_validDateRange_returnsResponseEntityWithCorrectLinks" />
+        <item itemvalue="JUnit.UserServiceImplTest.getUsersWithPagination_invalidDateRange_throwsException" />
+        <item itemvalue="JUnit.UserServiceImplTest.getUsersWithPagination_invalidBirthdateFilter" />
       </list>
     </recent_temporary>
   </component>
@@ -148,11 +268,124 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1714217877863</updated>
-      <workItem from="1714217879590" duration="35137000" />
+      <workItem from="1714217879590" duration="65339000" />
     </task>
+    <task id="LOCAL-00001" summary="Add user management RESTful API&#10;&#10;- Added User entity with fields: id, email, firstname, lastname, birthdate, address, phoneNumber&#10;- Implemented UserController with CRUD operations for user management&#10;- Created UserRepository interface for database operations&#10;- Implemented GlobalExceptionHandler for handling exceptions&#10;- Added CustomResponse classes for handling response formats&#10;- Implemented UserService interface and UserServiceImpl with methods for user operations&#10;- Added UserUtils for email and birthdate validation&#10;- Configured database and server properties">
+      <option name="closed" value="true" />
+      <created>1714337903218</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714337903218</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added JpaSpecificationExecutor extension to the user repository.">
+      <option name="closed" value="true" />
+      <created>1714338062855</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714338062855</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add user management RESTful API&#10;&#10;- Added User entity with fields: id, email, firstname, lastname, birthdate, address, phoneNumber&#10;- Implemented UserController with CRUD operations for user management&#10;- Created UserRepository interface for database operations&#10;- Implemented GlobalExceptionHandler for handling exceptions&#10;- Added CustomResponse classes for handling response formats&#10;- Implemented UserService interface and UserServiceImpl with methods for user operations&#10;- Added UserUtils for email and birthdate validation&#10;- Configured database and server properties" />
+    <MESSAGE value="Added JpaSpecificationExecutor extension to the user repository." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added JpaSpecificationExecutor extension to the user repository." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/midel/utils/UserUtils.java</url>
+          <line>21</line>
+          <properties class="com.midel.utils.UserUtils" method="isBirthDateValid">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/user_management_restful$UserControllerTest_deleteUser.ic" NAME="UserControllerTest.deleteUser Coverage Results" MODIFIED="1714349414551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest_saveUser_missingRequiredField.ic" NAME="UserServiceImplTest.saveUser_missingRequiredField Coverage Results" MODIFIED="1714423510152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest_getUsersWithPagination_invalidBirthdateFilter.ic" NAME="UserServiceImplTest.getUsersWithPagination_invalidBirthdateFilter Coverage Results" MODIFIED="1714427641800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserControllerTest_getAllUsers_withInvalidPaginationParameters.ic" NAME="UserControllerTest.getAllUsers_withInvalidPaginationParameters Coverage Results" MODIFIED="1714341580572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest_saveUser_requiredFieldIsBlank.ic" NAME="UserServiceImplTest.saveUser_requiredFieldIsBlank Coverage Results" MODIFIED="1714423593361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest_getUserById_userNotFound.ic" NAME="UserServiceImplTest.getUserById_userNotFound Coverage Results" MODIFIED="1714424240170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserControllerTest_getAllUsers_withoutParameters.ic" NAME="UserControllerTest.getAllUsers_withoutParameters Coverage Results" MODIFIED="1714340526115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest_updateUser_userNotFound.ic" NAME="UserServiceImplTest.updateUser_userNotFound Coverage Results" MODIFIED="1714425479250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest_partiallyUpdateUser_validUserWithoutUpdateFields.ic" NAME="UserServiceImplTest.partiallyUpdateUser_validUserWithoutUpdateFields Coverage Results" MODIFIED="1714425831072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest_partiallyUpdateUser_validUser.ic" NAME="UserServiceImplTest.partiallyUpdateUser_validUser Coverage Results" MODIFIED="1714425687852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest_updateUser_validUser.ic" NAME="UserServiceImplTest.updateUser_validUser Coverage Results" MODIFIED="1714425357039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest_partiallyUser_userNotFound.ic" NAME="UserServiceImplTest.partiallyUser_userNotFound Coverage Results" MODIFIED="1714425727336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserControllerTest.ic" NAME="UserControllerTest Coverage Results" MODIFIED="1714351825899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest_getUserById_userFound.ic" NAME="UserServiceImplTest.getUserById_userFound Coverage Results" MODIFIED="1714424110374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest_deleteUser.ic" NAME="UserServiceImplTest.deleteUser Coverage Results" MODIFIED="1714424550575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserControllerTest_createUser_withExistEmail.ic" NAME="UserControllerTest.createUser_withExistEmail Coverage Results" MODIFIED="1714349182479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest_saveUser_invalidBirthdate.ic" NAME="UserServiceImplTest.saveUser_invalidBirthdate Coverage Results" MODIFIED="1714421865619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest_createUser_validUser.ic" NAME="UserServiceImplTest.createUser_validUser Coverage Results" MODIFIED="1714420588960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest_getUsersWithPagination_withDefaultParameters_withoutFilters_valid.ic" NAME="UserServiceImplTest.getUsersWithPagination_withDefaultParameters_withoutFilters_valid Coverage Results" MODIFIED="1714427433556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest.ic" NAME="UserServiceImplTest Coverage Results" MODIFIED="1714428143473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/user_management_restful$UserServiceImplTest_saveUser_emailAlreadyExist.ic" NAME="UserServiceImplTest.saveUser_emailAlreadyExist Coverage Results" MODIFIED="1714423823552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.midel.service.*</FILTER>
+    </SUITE>
   </component>
 </project>

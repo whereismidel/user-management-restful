@@ -7,15 +7,15 @@ import java.time.LocalDate;
 
 public interface UserService {
 
-    ResponseEntity<?> createUser(User user);
+    User createUser(User user);
 
-    ResponseEntity<?> getUserById(Long id);
+    User getUserById(Long id);
 
-    ResponseEntity<?> getUsersWithPagination(int offset, int limit, LocalDate from, LocalDate to);
+    ResponseEntity<?> getUsersWithPagination(int page, int size, LocalDate from, LocalDate to);
 
-    ResponseEntity<?> updateUser(Long id, User user);
+    User updateUser(Long id, User user);
 
-    ResponseEntity<?> partiallyUpdateUser(Long id, User user);
+    User partiallyUpdateUser(Long id, User user);
 
-    ResponseEntity<?> deleteUser(Long id);
+    void deleteUser(Long id);
 }

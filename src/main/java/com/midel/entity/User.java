@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @Setter
 @ToString
 @Entity
+@EqualsAndHashCode
 @Table(name = "_user")
 public class User {
     @Id

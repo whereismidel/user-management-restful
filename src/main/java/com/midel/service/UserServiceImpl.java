@@ -1,10 +1,11 @@
 package com.midel.service;
 
 import com.midel.entity.User;
+import com.midel.exception.AlreadyExistException;
+import com.midel.exception.InvalidArgumentException;
+import com.midel.exception.NotFoundException;
 import com.midel.repository.UserRepository;
-import com.midel.response.ErrorResponse;
 import com.midel.response.PaginationResponse;
-import com.midel.response.UserResponse;
 import com.midel.utils.UserUtils;
 import jakarta.persistence.criteria.Predicate;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +24,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Stream;
 
 @Service
 @RequiredArgsConstructor
@@ -41,36 +41,14 @@ public class UserServiceImpl implements UserService {
     private int allowedAge;
 
     @Override
-    public ResponseEntity<?> createUser(User user) {
-
-        List<String> messages = validateUser(user);
-
-        if (!messages.isEmpty()) {
-            return new ErrorResponse(
-                    HttpStatus.BAD_REQUEST,
-                    messages
-            ).getResponseEntity();
-        }
-
-        return save(user, HttpStatus.CREATED);
+    public User createUser(User user) {
+        return save(user);
     }
 
     @Override
-    public ResponseEntity<?> getUserById(Long id) {
-        Optional<User> user = userRepository.findById(id);
-
-        if (user.isPresent()) {
-            return new UserResponse(
-                    HttpStatus.OK,
-                    user.get(),
-                    String.format("http://%s:%d/users/%d", address, port, id)
-            ).getResponseEntity();
-        } else {
-            return new ErrorResponse(
-                    HttpStatus.NOT_FOUND,
-                    "User with id = " + id + " not found."
-            ).getResponseEntity();
-        }
+    public User getUserById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("User with id = " + id + " not found."));
     }
 
     @Override
@@ -80,10 +58,7 @@ public class UserServiceImpl implements UserService {
     ) {
 
         if (from != null && to != null && to.isBefore(from)) {
-            return new ErrorResponse(
-                    HttpStatus.BAD_REQUEST,
-                    "The 'to' value must be after the 'from' value"
-            ).getResponseEntity();
+            throw new InvalidArgumentException("The 'to' value must be after the 'from' value");
         }
 
         UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromPath("/users")
@@ -116,7 +91,7 @@ public class UserServiceImpl implements UserService {
 
         long total = dataPage.getTotalElements();
 
-        Stream<User> data = dataPage.get();
+        List<User> data = dataPage.get().toList();
 
         return new PaginationResponse(
                 HttpStatus.OK, page, size, total,
@@ -127,23 +102,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public ResponseEntity<?> updateUser(Long id, User user) {
+    public User updateUser(Long id, User user) {
 
         Optional<User> optionalUser = userRepository.findById(id);
 
         if (optionalUser.isEmpty()) {
-            return new ErrorResponse(
-                    HttpStatus.NOT_FOUND,
-                    "User with id = " + id + " does not exist"
-            ).getResponseEntity();
-        }
-
-        List<String> messages = validateUser(user);
-        if (!messages.isEmpty()) {
-            return new ErrorResponse(
-                    HttpStatus.BAD_REQUEST,
-                    messages
-            ).getResponseEntity();
+            throw new NotFoundException("User with id = " + id + " does not exist");
         }
 
         User existingUser = optionalUser.get();
@@ -154,18 +118,15 @@ public class UserServiceImpl implements UserService {
         existingUser.setAddress(user.getAddress());
         existingUser.setPhoneNumber(user.getPhoneNumber());
 
-        return save(existingUser, HttpStatus.OK);
+        return save(existingUser);
     }
 
     @Override
-    public ResponseEntity<?> partiallyUpdateUser(Long id, User user) {
+    public User partiallyUpdateUser(Long id, User user) {
         Optional<User> optionalUser = userRepository.findById(id);
 
         if (optionalUser.isEmpty()) {
-            return new ErrorResponse(
-                    HttpStatus.NOT_FOUND,
-                    "User with id = " + id + " does not exist"
-            ).getResponseEntity();
+            throw new NotFoundException("User with id = " + id + " does not exist");
         }
 
         User existingUser = optionalUser.get();
@@ -188,44 +149,29 @@ public class UserServiceImpl implements UserService {
             existingUser.setPhoneNumber(user.getPhoneNumber());
         }
 
-        List<String> messages = validateUser(existingUser);
-        if (!messages.isEmpty()) {
-            return new ErrorResponse(
-                    HttpStatus.BAD_REQUEST,
-                    messages
-            ).getResponseEntity();
-        }
-
-        return save(existingUser, HttpStatus.OK);
+        return save(existingUser);
     }
 
     @Override
-    public ResponseEntity<?> deleteUser(Long id) {
+    public void deleteUser(Long id) {
         userRepository.deleteById(id);
-
-        return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    private ResponseEntity<?> save(User user, HttpStatus successStatus) {
+    private User save(User user) {
         try {
-            user = userRepository.save(user);
 
-            return new UserResponse(
-                    successStatus,
-                    user,
-                    String.format("http://%s:%d/users/%d", address, port, user.getId())
-            ).getResponseEntity();
+            List<String> messages = validateUser(user);
+
+            if (!messages.isEmpty()) {
+                throw new InvalidArgumentException(messages);
+            }
+
+            return userRepository.save(user);
 
         } catch (DataIntegrityViolationException e) {
-            return new ErrorResponse(
-                    HttpStatus.BAD_REQUEST,
-                    "A user with this email already exists."
-            ).getResponseEntity();
+            throw new AlreadyExistException("A user with this email already exists.");
         } catch (Exception e) {
-            return new ErrorResponse(
-                    HttpStatus.BAD_REQUEST,
-                    e.getMessage()
-            ).getResponseEntity();
+            throw new InvalidArgumentException(e.getMessage());
         }
     }
 
